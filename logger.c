@@ -6,9 +6,11 @@
 #include <stdarg.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <pthread.h>
 
 static int log_pipe[2];
 static pid_t logger_pid;
+static pthread_mutex_t log_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 void init_logger() {
     if (pipe(log_pipe) == -1) {
@@ -54,8 +56,9 @@ void log_message(const char *format, ...) {
     va_start(args, format);
     vsnprintf(buffer, sizeof(buffer), format, args);
     va_end(args);
-
+    pthread_mutex_lock(&log_mutex);
     write(log_pipe[1], buffer, strlen(buffer));
+    pthread_mutex_unlock(&log_mutex);
 }
 
 void close_logger() {
