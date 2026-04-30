@@ -53,7 +53,7 @@ It demonstrates core **Operating Systems concepts** such as **process management
 - **Fork / Process Management**
 - **File Handling (for database)**
 - **IPC mechanisms**
-- **Synchronization (if implemented)**
+- **Synchronization**
 
 ---
 
@@ -112,13 +112,6 @@ gcc client.c -o client
 
 ---
 
-## **Concurrency Model**
-
-- Each client is handled using:
-  - **fork()** *or* **threads (pthread)** *(depending on implementation)*  
-- Ensures **multiple users can interact simultaneously**
-
----
 
 ## **Data Management**
 
@@ -151,7 +144,6 @@ gcc client.c -o client
 - **Authentication system**
 - **GUI interface**
 - **Database integration (MySQL)**
-- **Better concurrency control (locks/semaphores)**
 - **Network security enhancements**
 
 ---
