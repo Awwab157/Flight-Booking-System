@@ -1,1 +1,14 @@
 Server started.
+New client connected.
+New user Admin registered.
+Failed login attempt for user Admin.
+User Admin logged in.
+User 2 logged out.
+User admin logged in.
+Admin added flight 123.
+User 1 logged out.
+Failed login attempt for user Admin.
+User Admin logged in.
+User 2 booked 4 seats on flight 1.
+User 2 logged out.
+Client disconnected. User ID: 0
